@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className="flex items-center h-full">
           <nav className="w-[90%] lg:w-[80%] xl:w-[70%] mx-auto flex justify-between items-center">
             <Link to="/" className="flex items-center">
-              <span className="mr-0.5 -mt-1 font-extrabold text-purple-500 text-xl lg:text-3xl">
+              <span className="mr-0.5 -mt-1 font-extrabold text-purple-600 text-xl lg:text-3xl">
                 Easy
               </span>
               <div className="text-sm lg:text-lg font-bold uppercase tracking-wider">
@@ -38,7 +38,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/register"
-                className="px-6 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-normal"
+                className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-normal"
               >
                 Register
               </Link>
