@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.active {
+    @apply border border-white rounded-2xl;
+}
