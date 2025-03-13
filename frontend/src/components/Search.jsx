@@ -40,9 +40,9 @@ const Search = () => {
   };
 
   return (
-    <div className="relative w-[95%] md:w-[80%] lg:w-[70%] xl:w-[60%] mx-auto bg-white py-3 md:py-4 px-4 md:px-6 lg:border-2 border-[#ffd60a] flex flex-col md:flex-row items-center text-gray-600 rounded-lg shadow-md h-auto md:h-20 gap-3 md:g">
+    <div className="relative w-[95%] md:w-[85%] lg:w-[75%] xl:w-[60%] mx-auto bg-white py-3 md:py-4 px-4 md:px-6 lg:border-2 border-[#ffd60a] flex flex-wrap items-center text-gray-600 rounded-lg shadow-md gap-3">
       {/* Destination Input */}
-      <div className="flex items-center gap-2 md:gap-3 bg-gray-100 px-4 py-2 rounded-lg w-full md:w-[250px]">
+      <div className="flex items-center gap-2 md:gap-3 bg-gray-100 px-4 py-2 rounded-lg w-full md:min-w-[200px] md:flex-1">
         <FaBed className="text-gray-600 size-6" />
         <input
           type="text"
@@ -52,7 +52,7 @@ const Search = () => {
       </div>
 
       {/* Date Selection */}
-      <div className="relative w-full md:w-[200px]">
+      <div className="relative w-full md:min-w-[200px] md:flex-1">
         <div
           className="flex items-center gap-2 md:gap-3 bg-gray-100 px-4 py-2 rounded-lg cursor-pointer"
           onClick={() => setShowDatePicker(!showDatePicker)}
@@ -80,7 +80,10 @@ const Search = () => {
       </div>
 
       {/* People Selection */}
-      <div className="relative w-full md:min-w-[250px] flex-1" ref={optionsRef}>
+      <div
+        className="relative w-full md:min-w-[200px] md:flex-2"
+        ref={optionsRef}
+      >
         <div
           className="flex items-center justify-between bg-gray-100 px-4 py-3 rounded-lg cursor-pointer hover:bg-gray-200 transition"
           onClick={() => setShowOptions(!showOptions)}
@@ -91,8 +94,7 @@ const Search = () => {
               {`${options.adult} Adults, ${options.children} Children, ${options.room} Rooms`}
             </span>
           </div>
-          <span className="text-gray-500 text-xs">▼</span>{" "}
-          {/* Dropdown indicator */}
+          <span className="text-gray-500 text-xs">▼</span>
         </div>
 
         {showOptions && (
@@ -135,7 +137,7 @@ const Search = () => {
       </div>
 
       {/* Search Button */}
-      <div className="flex justify-center md:justify-end w-full md:w-auto md:ml-auto">
+      <div className="flex justify-center md:justify-end w-full md:flex-1">
         <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-2xl w-full md:w-fit cursor-pointer">
           Search
         </button>
