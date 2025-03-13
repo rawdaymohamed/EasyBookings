@@ -1,0 +1,147 @@
+import React, { useState, useRef, useEffect } from "react";
+import { FaBed, FaCalendar, FaPerson } from "react-icons/fa6";
+import { DateRange } from "react-date-range";
+import { addDays, format } from "date-fns";
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css
+
+const Search = () => {
+  const [dateRange, setDateRange] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(new Date(), 3),
+      key: "selection",
+    },
+  ]);
+
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
+  const [options, setOptions] = useState({ adult: 1, children: 0, room: 1 });
+
+  const optionsRef = useRef(null);
+
+  // Close the options menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (optionsRef.current && !optionsRef.current.contains(event.target)) {
+        setShowOptions(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Function to update options
+  const handleOptionChange = (field, amount) => {
+    setOptions((prev) => ({
+      ...prev,
+      [field]: Math.max(0, prev[field] + amount),
+    }));
+  };
+
+  return (
+    <div className="relative w-[95%] md:w-[80%] lg:w-[70%] xl:w-[60%] mx-auto bg-white py-3 md:py-4 px-4 md:px-6 lg:border-2 border-[#ffd60a] flex flex-col md:flex-row items-center text-gray-600 rounded-lg shadow-md h-auto md:h-20 gap-3 md:g">
+      {/* Destination Input */}
+      <div className="flex items-center gap-2 md:gap-3 bg-gray-100 px-4 py-2 rounded-lg w-full md:w-[250px]">
+        <FaBed className="text-gray-600 size-6" />
+        <input
+          type="text"
+          placeholder="Where are you going...?"
+          className="bg-transparent outline-none w-full text-gray-700 placeholder-gray-400 text-sm md:text-base"
+        />
+      </div>
+
+      {/* Date Selection */}
+      <div className="relative w-full md:w-[200px]">
+        <div
+          className="flex items-center gap-2 md:gap-3 bg-gray-100 px-4 py-2 rounded-lg cursor-pointer"
+          onClick={() => setShowDatePicker(!showDatePicker)}
+        >
+          <FaCalendar className="text-gray-600 size-5" />
+          <span className="text-gray-700 text-xs md:text-sm whitespace-nowrap">
+            {`${format(dateRange[0].startDate, "MMM dd")} - ${format(
+              dateRange[0].endDate,
+              "MMM dd"
+            )}`}
+          </span>
+        </div>
+
+        {showDatePicker && (
+          <div className="absolute top-full left-0 z-10 mt-2 shadow-lg bg-white border p-2 rounded-lg">
+            <DateRange
+              editableDateInputs={true}
+              onChange={(ranges) => setDateRange([ranges.selection])}
+              moveRangeOnFirstSelection={false}
+              ranges={dateRange}
+              minDate={new Date()}
+            />
+          </div>
+        )}
+      </div>
+
+      {/* People Selection */}
+      <div className="relative w-full md:min-w-[250px] flex-1" ref={optionsRef}>
+        <div
+          className="flex items-center justify-between bg-gray-100 px-4 py-3 rounded-lg cursor-pointer hover:bg-gray-200 transition"
+          onClick={() => setShowOptions(!showOptions)}
+        >
+          <div className="flex items-center gap-3">
+            <FaPerson className="text-gray-600 size-6" />
+            <span className="text-gray-700 text-xs md:text-sm">
+              {`${options.adult} Adults, ${options.children} Children, ${options.room} Rooms`}
+            </span>
+          </div>
+          <span className="text-gray-500 text-xs">▼</span>{" "}
+          {/* Dropdown indicator */}
+        </div>
+
+        {showOptions && (
+          <div className="absolute top-full left-0 w-full bg-white shadow-lg border border-gray-300 rounded-lg p-4 mt-2 z-10">
+            {[
+              { label: "Adults", key: "adult", min: 1 },
+              { label: "Children", key: "children", min: 0 },
+              { label: "Rooms", key: "room", min: 1 },
+            ].map(({ label, key, min }) => (
+              <div key={key} className="flex justify-between items-center mb-3">
+                <span className="text-gray-700 font-medium text-sm">
+                  {label}
+                </span>
+                <div className="flex items-center gap-2">
+                  <button
+                    className={`px-3 py-1 rounded-lg text-sm transition ${
+                      options[key] === min
+                        ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                        : "bg-gray-200 hover:bg-gray-400 hover:text-white"
+                    }`}
+                    onClick={() => handleOptionChange(key, -1)}
+                    disabled={options[key] === min}
+                  >
+                    -
+                  </button>
+                  <span className="text-gray-700 font-semibold text-sm">
+                    {options[key]}
+                  </span>
+                  <button
+                    className="px-3 py-1 rounded-lg text-sm bg-gray-200 hover:bg-gray-400 hover:text-white transition"
+                    onClick={() => handleOptionChange(key, 1)}
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Search Button */}
+      <div className="flex justify-center md:justify-end w-full md:w-auto md:ml-auto">
+        <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-2xl w-full md:w-fit cursor-pointer">
+          Search
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Search;

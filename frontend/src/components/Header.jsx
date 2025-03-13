@@ -2,46 +2,62 @@ import React from "react";
 import { FaBed, FaCar } from "react-icons/fa6";
 import { GrAttraction } from "react-icons/gr";
 import { IoAirplane } from "react-icons/io5";
+import Search from "./Search";
+
 const Header = () => {
   return (
-    <div className=" bg-purple-600 text-white p-16">
-      <div className="w-[95%] lg:w-[80%] xl:w-[70%] mx-auto space-y-10">
-        <div className="flex flex-col lg:flex-row gap-8 lg:justify-center">
-          <div className="flex items-center gap-5 px-4 py-2 active">
-            <FaBed className="size-6" />
-            <p>Stays</p>
+    <>
+      {/* Header Section */}
+      <div className="relative bg-purple-600 text-white py-14 md:py-20">
+        <div className="w-[95%] md:w-[90%] lg:w-[80%] xl:w-[70%] mx-auto space-y-8 md:space-y-10">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+            <div className="flex items-center gap-3 px-4 py-2 active">
+              <FaBed className="size-5 md:size-6" />
+              <p className="text-sm md:text-base">Stays</p>
+            </div>
+            <div className="flex items-center gap-3 px-4 py-2">
+              <IoAirplane className="size-5 md:size-6" />
+              <p className="text-sm md:text-base">Flights</p>
+            </div>
+            <div className="flex items-center gap-3 px-4 py-2">
+              <FaCar className="size-5 md:size-6" />
+              <p className="text-sm md:text-base">Car Rentals</p>
+            </div>
+            <div className="flex items-center gap-3 px-4 py-2">
+              <FaBed className="size-5 md:size-6" />
+              <p className="text-sm md:text-base">Attractions</p>
+            </div>
+            <div className="flex items-center gap-3 px-4 py-2">
+              <GrAttraction className="size-5 md:size-6" />
+              <p className="text-sm md:text-base">Airport Taxis</p>
+            </div>
           </div>
-          <div className="flex items-center gap-5  px-4 py-2">
-            <IoAirplane className="size-6" />
-            <p>Flights</p>
-          </div>
-          <div className="flex items-center gap-5 px-4 py-2">
-            <FaCar className="size-6" />
-            <p>Car Rentals</p>
-          </div>
-          <div className="flex items-center gap-5  px-4 py-2">
-            <FaBed className="size-6" />
-            <p>Attractions</p>
-          </div>
-          <div className="flex items-center gap-5  px-4 py-2">
-            <GrAttraction className="size-6" />
-            <p>Airport Taxis</p>
+
+          <div className="flex flex-col gap-4 text-center">
+            <h2 className="font-bold text-xl md:text-3xl lg:text-4xl leading-snug md:leading-[3rem]">
+              Welcome to EasyBookings, your gateway to exceptional
+              accommodations.
+            </h2>
+            <p className="font-light text-sm md:text-lg leading-relaxed">
+              We offer a range of comfortable rooms and suites to suit every
+              traveler. Explore our amenities, check availability, and book your
+              stay with ease. Experience unparalleled hospitality and create
+              lasting memories.
+            </p>
           </div>
         </div>
 
-        <div className="flex flex-col gap-5">
-          <h2 className="font-bold text-2xl lg:text-4xl leading-[2.5rem] lg:leading-[3rem] lg:text-center">
-            Welcome to EasyBookings, your gateway to exceptional accommodations.
-          </h2>
-          <p className="lg:text-center font-light leading-[2rem] lg:text-lg">
-            We offer a range of comfortable rooms and suites to suit every
-            traveler. Explore our amenities, check availability, and book your
-            stay with ease. Experience unparalleled hospitality and create
-            lasting memories.
-          </p>
+        {/* Search for medium & larger screens (inside the header) */}
+        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 w-full px-4">
+          <Search />
         </div>
       </div>
-    </div>
+
+      {/* Search for small screens (outside the header with gray background) */}
+      <div className="block md:hidden bg-gray-200 py-6 px-4">
+        <Search />
+      </div>
+    </>
   );
 };
 
