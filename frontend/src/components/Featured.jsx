@@ -17,7 +17,6 @@ const Featured = () => {
           </figcaption>
         </figure>
       </div>
-
       {/* North Carolina */}
       <div className="relative w-full text-left">
         <figure className="relative">
@@ -32,18 +31,17 @@ const Featured = () => {
           </figcaption>
         </figure>
       </div>
-
-      {/* Dublin */}
+      {/* Los Angeles */}
       <div className="relative w-full text-left">
         <figure className="relative">
           <img
-            src="/nature.jpg"
+            src="/los-angeles.jpg"
             alt="Beautiful nature scene in Dublin"
             className="w-full aspect-[4/3] object-cover rounded-md"
           />
           <figcaption className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent text-white p-4 rounded-b-md">
-            <h1 className="text-2xl font-bold">Dublin</h1>
             <h2 className="text-lg">456 properties</h2>
+            <h1 className="text-2xl font-bold">Los Angeles</h1>
           </figcaption>
         </figure>
       </div>

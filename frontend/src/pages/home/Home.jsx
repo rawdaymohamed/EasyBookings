@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import Search from "../../components/Search";
 import Featured from "../../components/Featured";
+import PropertyList from "../../components/PropertyList";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">
           Browse by property type
         </h2>
+        <PropertyList />
       </div>
     </div>
   );
