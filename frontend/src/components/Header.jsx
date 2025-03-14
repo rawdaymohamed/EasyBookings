@@ -33,29 +33,36 @@ const Header = ({ type }) => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 text-center">
-            <h2 className="font-bold text-xl md:text-3xl lg:text-4xl leading-snug md:leading-[3rem]">
-              Welcome to EasyBookings, your gateway to exceptional
-              accommodations.
-            </h2>
-            <p className="font-light text-sm md:text-lg leading-relaxed">
-              We offer a range of comfortable rooms and suites to suit every
-              traveler. Explore our amenities, check availability, and book your
-              stay with ease. Experience unparalleled hospitality and create
-              lasting memories.
-            </p>
-          </div>
-          {/* Search for medium & larger screens (inside the header) */}
+          {type !== "list" && (
+            <div className="flex flex-col gap-4 text-center">
+              <h2 className="font-bold text-xl md:text-3xl lg:text-4xl leading-snug md:leading-[3rem]">
+                Welcome to EasyBookings, your gateway to exceptional
+                accommodations.
+              </h2>
+              <p className="font-light text-sm md:text-lg leading-relaxed">
+                We offer a range of comfortable rooms and suites to suit every
+                traveler. Explore our amenities, check availability, and book
+                your stay with ease. Experience unparalleled hospitality and
+                create lasting memories.
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* Search for medium & larger screens (inside the header) */}
+        {type !== "list" && (
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 w-full px-4">
             <Search />
           </div>
-        </div>
+        )}
+      </div>
 
-        {/* Search for small screens (outside the header with gray background) */}
-        <div className="block md:hidden  py-6 px-4">
+      {/* Search for small screens (outside the header with gray background) */}
+      {type !== "list" && (
+        <div className="block md:hidden bg-gray-200 py-6 px-4">
           <Search />
         </div>
-      </div>
+      )}
     </>
   );
 };
