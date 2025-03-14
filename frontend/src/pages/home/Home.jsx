@@ -20,7 +20,7 @@ const Home = () => {
         <PropertyList />
 
         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">
-          Homes guests love
+          Discover Our Best
         </h2>
         <FeaturedProperties />
       </div>
