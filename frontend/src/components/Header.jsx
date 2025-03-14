@@ -4,7 +4,7 @@ import { GrAttraction } from "react-icons/gr";
 import { IoAirplane } from "react-icons/io5";
 import Search from "./Search";
 
-const Header = () => {
+const Header = ({ type }) => {
   return (
     <>
       {/* Header Section */}
@@ -45,17 +45,16 @@ const Header = () => {
               lasting memories.
             </p>
           </div>
+          {/* Search for medium & larger screens (inside the header) */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 w-full px-4">
+            <Search />
+          </div>
         </div>
 
-        {/* Search for medium & larger screens (inside the header) */}
-        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 w-full px-4">
+        {/* Search for small screens (outside the header with gray background) */}
+        <div className="block md:hidden  py-6 px-4">
           <Search />
         </div>
-      </div>
-
-      {/* Search for small screens (outside the header with gray background) */}
-      <div className="block md:hidden bg-gray-200 py-6 px-4">
-        <Search />
       </div>
     </>
   );
