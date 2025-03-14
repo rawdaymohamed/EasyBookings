@@ -8,7 +8,11 @@ const Header = ({ type }) => {
   return (
     <>
       {/* Header Section */}
-      <div className="relative bg-purple-600 text-white py-14 md:py-20">
+      <div
+        className={`relative bg-purple-600 text-white ${
+          type !== "list" ? "py-14 md:py-20" : "py-12"
+        }`}
+      >
         <div className="w-[95%] md:w-[90%] lg:w-[80%] xl:w-[70%] mx-auto space-y-8 md:space-y-10">
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             <div className="flex items-center gap-3 px-4 py-2 active">
