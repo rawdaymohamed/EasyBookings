@@ -67,7 +67,7 @@ const Search = () => {
         </div>
 
         {showDatePicker && (
-          <div className="absolute top-full left-0 z-10 mt-2 shadow-lg bg-white border p-2 rounded-lg">
+          <div className="absolute top-full left-0 z-50 mt-2 shadow-lg bg-white border p-2 rounded-lg">
             <DateRange
               editableDateInputs={true}
               onChange={(ranges) => setDateRange([ranges.selection])}
@@ -98,7 +98,7 @@ const Search = () => {
         </div>
 
         {showOptions && (
-          <div className="absolute top-full left-0 w-full bg-white shadow-lg border border-gray-300 rounded-lg p-4 mt-2 z-10">
+          <div className="absolute top-full left-0 w-full bg-white shadow-lg border border-gray-300 rounded-lg p-4 mt-2 z-50">
             {[
               { label: "Adults", key: "adult", min: 1 },
               { label: "Children", key: "children", min: 0 },

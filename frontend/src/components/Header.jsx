@@ -55,7 +55,7 @@ const Header = ({ type }) => {
 
         {/* Search for medium & larger screens (inside the header) */}
         {type !== "list" && (
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 w-full px-4">
+          <div className="z-50 hidden md:block absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 w-full px-4">
             <Search />
           </div>
         )}
@@ -63,7 +63,7 @@ const Header = ({ type }) => {
 
       {/* Search for small screens (outside the header with gray background) */}
       {type !== "list" && (
-        <div className="block md:hidden bg-gray-200 py-6 px-4">
+        <div className="z-50 block md:hidden bg-gray-200 py-6 px-4">
           <Search />
         </div>
       )}
