@@ -2,18 +2,33 @@ import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Header from "../../components/Header";
 import { useLocation } from "react-router-dom";
-import { format } from "date-fns";
+import { addDays, format } from "date-fns";
 import { DateRange } from "react-date-range";
-import { FaCalendar, FaPerson } from "react-icons/fa6";
+import { FaCalendar } from "react-icons/fa6";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import SearchItem from "../../components/SearchItem";
 
 const List = () => {
   const location = useLocation();
-  const [destination, setDestination] = useState(location.state.destination);
-  const [options, setOptions] = useState(location.state.options);
-  const [date, setDate] = useState(location.state.dateRange);
+  const [destination, setDestination] =
+    useState(location?.state?.destination) || "";
+  const [options, setOptions] = useState(
+    location?.state?.options || {
+      adult: 1,
+      children: 0,
+      room: 1,
+    }
+  );
+  const [date, setDate] = useState(
+    location?.state?.dateRange || [
+      {
+        startDate: new Date(),
+        endDate: addDays(new Date(), 3),
+        key: "selection",
+      },
+    ]
+  );
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(1000);
@@ -30,9 +45,9 @@ const List = () => {
       <Navbar />
       <Header type="list" />
       <div className="w-[90%] lg:w-[80%] xl:w-[70%] mx-auto py-6">
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-2">
           {/* Search Box */}
-          <div className="bg-white shadow-lg rounded-lg p-6 w-full lg:w-1/3 h-fit sticky top-20">
+          <div className="bg-white shadow-lg rounded-lg p-6 w-full lg:w-1/4 h-fit xs:sticky xs:top-20 sm:static">
             <h1 className="text-2xl font-semibold text-gray-700 mb-4">
               Search
             </h1>
@@ -45,6 +60,7 @@ const List = () => {
                 <input
                   type="text"
                   value={destination}
+                  onChange={(e) => setDestination(e.target.value)}
                   className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400"
                 />
               </div>
@@ -139,7 +155,7 @@ const List = () => {
           </div>
 
           {/* List Results */}
-          <div className="bg-white shadow-lg rounded-lg p-6 flex-1 h-[80vh] overflow-y-auto">
+          <div className="w-full bg-white shadow-lg rounded-lg flex-1 h-[80vh] overflow-y-auto">
             <h2 className="text-xl font-semibold text-gray-700 mb-4">
               List Results
             </h2>
