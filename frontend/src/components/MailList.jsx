@@ -19,9 +19,9 @@ const MailList = () => {
             name="email"
             id="email"
             placeholder="Enter your email"
-            className="w-full sm:flex-grow px-4 py-3 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="w-full sm:flex-grow px-4 py-3 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
           />
-          <button className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3 rounded-lg transition duration-300">
+          <button className="w-full sm:w-auto bg-purple-400 hover:bg-purple-500 text-black font-semibold px-6 py-3 rounded-lg transition duration-300">
             Subscribe
           </button>
         </div>

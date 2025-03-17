@@ -19,7 +19,7 @@ const Footer = () => {
             {list.slice(1).map((item, i) => (
               <li
                 key={i}
-                className="hover:text-yellow-400 cursor-pointer transition"
+                className="hover:text-purple-400 cursor-pointer transition"
               >
                 {item}
               </li>
