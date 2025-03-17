@@ -7,6 +7,7 @@ import { DateRange } from "react-date-range";
 import { FaCalendar, FaPerson } from "react-icons/fa6";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
+import SearchItem from "../../components/SearchItem";
 
 const List = () => {
   const location = useLocation();
@@ -143,7 +144,12 @@ const List = () => {
               List Results
             </h2>
             {/* Add dynamic content here */}
-            <div className="text-gray-500">No results found.</div>
+            <div className="flex flex-col gap-5 my-6">
+              <SearchItem />
+              <SearchItem />
+              <SearchItem />
+              <SearchItem />
+            </div>
           </div>
         </div>
       </div>
