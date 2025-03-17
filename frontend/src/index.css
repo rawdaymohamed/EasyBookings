@@ -3,3 +3,17 @@
 .active {
     @apply border border-white rounded-2xl;
 }
+
+/* Override default underline color in react-date-range */
+.rdrDayToday .rdrDayNumber span:after {
+    background-color: #8b5cf6 !important;
+    /* Purple underline for today */
+}
+
+.rdrDayHovered .rdrDayNumber span:after,
+.rdrSelected,
+.rdrStartEdge,
+.rdrEndEdge {
+    background-color: #8b5cf6 !important;
+    /* Purple underline for selected dates */
+}

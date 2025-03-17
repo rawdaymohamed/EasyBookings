@@ -4,8 +4,10 @@ import { DateRange } from "react-date-range";
 import { addDays, format } from "date-fns";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
+  const navigate = useNavigate();
   const [dateRange, setDateRange] = useState([
     {
       startDate: new Date(),
@@ -17,9 +19,12 @@ const Search = () => {
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [options, setOptions] = useState({ adult: 1, children: 0, room: 1 });
-
+  const [destination, setDestination] = useState("");
   const optionsRef = useRef(null);
 
+  const handleSearch = () => {
+    navigate("/hotels", { state: { dateRange, destination, options } });
+  };
   // Close the options menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -47,6 +52,8 @@ const Search = () => {
         <input
           type="text"
           placeholder="Where are you going...?"
+          value={destination}
+          onChange={(e) => setDestination(e.target.value)}
           className="bg-transparent outline-none w-full text-gray-700 placeholder-gray-400 text-sm md:text-base"
         />
       </div>
@@ -73,6 +80,7 @@ const Search = () => {
               onChange={(ranges) => setDateRange([ranges.selection])}
               moveRangeOnFirstSelection={false}
               ranges={dateRange}
+              rangeColors={["#8b5cf6"]} // Purple selection color
               minDate={new Date()}
             />
           </div>
@@ -138,7 +146,10 @@ const Search = () => {
 
       {/* Search Button */}
       <div className="flex justify-center md:justify-end w-full md:flex-1">
-        <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-2xl w-full md:w-fit cursor-pointer">
+        <button
+          onClick={handleSearch}
+          className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-2xl w-full md:w-fit cursor-pointer"
+        >
           Search
         </button>
       </div>
