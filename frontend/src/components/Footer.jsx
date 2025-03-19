@@ -10,7 +10,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12">
+    <footer className="bg-gray-900 text-gray-300 py-18">
       {/* Footer Lists */}
       <div className=" w-[90%] lg:w-[80%] xl:w-[70%] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-center sm:text-left">
         {footerContent.map((list, index) => (

@@ -2,7 +2,7 @@ import React from "react";
 
 const MailList = () => {
   return (
-    <div className="bg-black w-full py-12 md:py-16">
+    <div className="bg-black w-full py-16 md:py-18">
       <div className="w-[90%] lg:w-[40%] mx-auto text-center text-white">
         {/* Title */}
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
