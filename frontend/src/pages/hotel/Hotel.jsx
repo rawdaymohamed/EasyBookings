@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import { FaLocationDot } from "react-icons/fa6";
 import MailList from "../../components/MailList";
 import Footer from "../../components/Footer";
+import Slider from "../../components/Slider";
 
 const Hotel = () => {
   const images = [
@@ -35,6 +36,7 @@ const Hotel = () => {
         <div className="bg-blue-100 text-blue-800 p-4 rounded-lg font-medium">
           Book a stay over $114 at this property and get a free airport taxi
         </div>
+        <Slider images={images} />
         {/* Hotel images */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((image) => (
