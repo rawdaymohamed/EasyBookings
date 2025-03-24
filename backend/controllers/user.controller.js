@@ -1,4 +1,5 @@
 import User from "../models/user.model.js";
+import bcrypt from "bcryptjs"
 import { createError } from "../utils/createError.js";
 
 export const edit = async (req, res, next) => {
