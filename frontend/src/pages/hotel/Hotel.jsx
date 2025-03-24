@@ -38,7 +38,7 @@ const Hotel = () => {
         </div>
         <Slider images={images} />
         {/* Hotel images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((image) => (
             <div
               key={image.id}
@@ -51,7 +51,7 @@ const Hotel = () => {
               />
             </div>
           ))}
-        </div>
+        </div> */}
         {/* Details */}
         <div className="bg-white p-6 shadow-md rounded-lg">
           <h2 className="text-2xl font-semibold text-gray-800">
