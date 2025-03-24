@@ -18,6 +18,7 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/hotels", hotelRoutes);
+app.use("/api/users", userRoutes);
 app.use("/api/rooms", roomRoutes);
 
 app.get("/", (req, res) => res.json({ message: "Welcome to EasyBookings" }));
