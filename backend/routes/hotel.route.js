@@ -1,9 +1,10 @@
 import { Router } from "express";
 import { create, edit, getAll, remove, get } from "../controllers/hotel.controller.js";
+import { verifyToken } from "../utils/auth.js";
 const router = Router();
-router.put("/:id", edit);
-router.delete("/:id", remove);
+router.put("/:id", verifyToken, edit);
+router.delete("/:id", verifyToken, remove);
 router.get("/:id", get);
 router.get("/", getAll);
-router.post("/", create);
+router.post("/", verifyToken, create);
 export default router;
