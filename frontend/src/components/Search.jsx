@@ -45,7 +45,7 @@ const Search = () => {
   };
 
   return (
-    <div className="relative w-[95%] md:w-[85%] lg:w-[75%] xl:w-[60%] mx-auto bg-white py-3 md:py-4 px-4 md:px-6 lg:border-2 border-[#ffd60a] flex flex-wrap items-center text-gray-600 rounded-lg shadow-md gap-3">
+    <div className="relative w-[95%] md:w-[90%] lg:w-[80%] xl:w-[70%]  mx-auto bg-white py-3 md:py-4 px-4 md:px-6 lg:border-2 border-[#ffd60a] flex flex-wrap items-center text-gray-600 rounded-lg shadow-md gap-3">
       {/* Destination Input */}
       <div className="flex items-center gap-2 md:gap-3 bg-gray-100 px-4 py-2 rounded-lg w-full md:min-w-[200px] md:flex-1">
         <FaBed className="text-gray-600 size-6" />
