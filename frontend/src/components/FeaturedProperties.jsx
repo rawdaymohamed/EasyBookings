@@ -45,7 +45,7 @@ const FeaturedProperties = () => {
       <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-7">
         Discover Our Best
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  2xl:grid-cols-4 gap-6">
         {properties.map((property) => (
           <div
             key={property.id}
