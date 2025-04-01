@@ -156,9 +156,6 @@ const List = () => {
 
           {/* List Results */}
           <div className="w-full bg-white shadow-lg rounded-lg flex-1 overflow-y-auto">
-            <h2 className="py-2 text-center text-xl font-semibold text-gray-700 mb-4">
-              List Results
-            </h2>
             {/* Add dynamic content here */}
             <div className="flex flex-col gap-5 my-6">
               <SearchItem />
