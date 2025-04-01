@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SearchItem = () => {
   return (
@@ -50,9 +51,12 @@ const SearchItem = () => {
             <span className="text-xs text-gray-500">
               Includes taxes and fees
             </span>
-            <button className="cursor-pointer mt-2 w-full md:w-auto bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition">
+            <Link
+              to="/hotels/12"
+              className="text-center cursor-pointer mt-2 w-full md:w-auto bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition"
+            >
               Check
-            </button>
+            </Link>
           </div>
         </div>
       </div>
