@@ -155,7 +155,7 @@ const List = () => {
           </div>
 
           {/* List Results */}
-          <div className="w-full bg-white shadow-lg rounded-lg flex-1 h-[80vh] overflow-y-auto">
+          <div className="w-full bg-white shadow-lg rounded-lg flex-1 h-[100vh] overflow-y-auto">
             <h2 className="text-xl font-semibold text-gray-700 mb-4">
               List Results
             </h2>
