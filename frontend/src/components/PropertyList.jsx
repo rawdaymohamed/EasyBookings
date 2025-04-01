@@ -62,7 +62,7 @@ const PropertyList = () => {
           </figure>
         </div>
         {/* cabins  */}
-        <div className="relative w-full text-left">
+        {/* <div className="relative w-full text-left">
           <figure className="relative">
             <img
               src="/cabin.jpg"
@@ -73,7 +73,7 @@ const PropertyList = () => {
               <h1 className="text-2xl font-bold">Cabins</h1>
             </figcaption>
           </figure>
-        </div>
+        </div> */}
       </div>
     </div>
   );

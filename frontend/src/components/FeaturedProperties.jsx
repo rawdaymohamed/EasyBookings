@@ -28,15 +28,15 @@ const properties = [
     review: "Exceptional",
     image: "/featured-apartment2.jpg",
   },
-  {
-    id: 4,
-    name: "Maldives Villa",
-    description: "Luxury overwater bungalow with private pool.",
-    price: "$300",
-    rating: "9.8",
-    review: "Outstanding",
-    image: "/featured-apartment3.jpg",
-  },
+  // {
+  //   id: 4,
+  //   name: "Maldives Villa",
+  //   description: "Luxury overwater bungalow with private pool.",
+  //   price: "$300",
+  //   rating: "9.8",
+  //   review: "Outstanding",
+  //   image: "/featured-apartment3.jpg",
+  // },
 ];
 
 const FeaturedProperties = () => {
