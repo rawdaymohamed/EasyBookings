@@ -30,3 +30,6 @@ app.use((err, req, res, next) => {
 db.then(() => {
     app.listen(PORT, () => console.log(`server running at ${PORT}`));
 });
+export default (req, res) => {
+    return app(req, res);
+};
