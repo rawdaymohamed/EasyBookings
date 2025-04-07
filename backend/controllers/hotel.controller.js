@@ -28,7 +28,7 @@ export const remove = async (req, res, next) => {
         const { id } = req.params;
         const deletedHotel = await Hotel.findByIdAndDelete(id);
         if (!deletedHotel) return res.status(404).json({ message: "Hotel not found" })
-        return res.status(201).json({ message: "Hotel not found" });
+        return res.status(201).json({ message: "Hotel deleted successfully" });
     } catch (error) {
         return next(createError("Can't remove hotel", 500));
     }
