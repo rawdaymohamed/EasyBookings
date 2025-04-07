@@ -21,7 +21,7 @@ app.use("/api/hotels", hotelRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/rooms", roomRoutes);
 
-app.get("/", (req, res) => res.json({ message: "Welcome to EasyBookings" }));
+app.get("/api", (req, res) => res.json({ message: "Welcome to EasyBookings" }));
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;
     const errorMessage = err.message || "Something went wrong";
