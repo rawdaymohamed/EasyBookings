@@ -6,7 +6,7 @@ const roomModel = new Schema({
     price: { type: Number, required: true },
     description: { type: String, required: true },
     maxPeople: { type: Number, required: true },
-    roomNumbers: [{ Number: Number, unavailableDates: { type: [Date] }, }]
+    roomNumbers: [{ number: Number, unavailableDates: { type: [Date] }, }]
 },
     { timestamps: true }
 );
