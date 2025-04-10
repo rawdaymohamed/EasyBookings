@@ -8,5 +8,4 @@
       { "src": "/(.*)", "dest": "/frontend/$1" }
     ],
     "rewrites": [{ "source": "/(.*)", "destination": "/" }]
-
-  }
+}
