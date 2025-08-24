@@ -4,6 +4,10 @@
 
 EasyBookings is a full stack web application designed to streamline the booking process for hotels and other accommodations. It provides a user-friendly interface for customers to search, book, and manage their reservations while offering administrators powerful tools to manage listings, availability, and bookings.
 
+## Demo
+
+Check out the live demo at [EasyBookings Demo](https://itseasybookings.vercel.app).
+
 ## Screenshots
 
 ![Homepage](./docs/Homepage.png)
@@ -13,9 +17,6 @@ EasyBookings is a full stack web application designed to streamline the booking 
 ![Booking Details](./docs/details.png)
 <br/>
 
-## Demo
-
-Check out the live demo at [EasyBookings Demo](https://itseasybookings.vercel.app).
 
 ## Features
 
