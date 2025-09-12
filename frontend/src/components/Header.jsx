@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBed, FaCar } from "react-icons/fa6";
+import { FaBed, FaCar, FaTaxi } from "react-icons/fa6";
 import { GrAttraction } from "react-icons/gr";
 import { IoAirplane } from "react-icons/io5";
 import Search from "./Search";
@@ -9,11 +9,10 @@ const Header = ({ type }) => {
     <>
       {/* Header Section */}
       <div
-        className={`relative bg-purple-600 text-white ${
-          type !== "list" ? "py-14 md:py-20" : "py-12"
-        }`}
+        className={`relative bg-purple-700 text-gray-100 ${type !== "list" ? "py-14 md:py-20" : "py-12"
+          }`}
       >
-        <div className="w-[95%] md:w-[90%] lg:w-[80%] xl:w-[70%] mx-auto space-y-8 md:space-y-10">
+        <div className="w-[95%] md:w-[90%] lg:w-[80%] xl:w-[70%] mx-auto space-y-8 md:space-y-10 font-bold">
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             <div className="flex items-center gap-3 px-4 py-2 active">
               <FaBed className="size-5 md:size-6" />
@@ -24,7 +23,7 @@ const Header = ({ type }) => {
               <p className="text-sm md:text-base">Flights</p>
             </div>
             <div className="flex items-center gap-3 px-4 py-2">
-              <FaCar className="size-5 md:size-6" />
+              <FaCar className="size-5 md:size-5" />
               <p className="text-sm md:text-base">Car Rentals</p>
             </div>
             <div className="flex items-center gap-3 px-4 py-2">
@@ -32,7 +31,7 @@ const Header = ({ type }) => {
               <p className="text-sm md:text-base">Attractions</p>
             </div>
             <div className="flex items-center gap-3 px-4 py-2">
-              <GrAttraction className="size-5 md:size-6" />
+              <FaTaxi className="size-5 md:size-5" />
               <p className="text-sm md:text-base">Airport Taxis</p>
             </div>
           </div>
@@ -43,7 +42,7 @@ const Header = ({ type }) => {
                 Welcome to EasyBookings, your gateway to exceptional
                 accommodations.
               </h2>
-              <p className="font-light text-sm md:text-lg leading-relaxed">
+              <p className="font-normal text-sm md:text-lg leading-relaxed">
                 We offer a range of comfortable rooms and suites to suit every
                 traveler. Explore our amenities, check availability, and book
                 your stay with ease. Experience unparalleled hospitality and
