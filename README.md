@@ -37,7 +37,7 @@ Check out the live demo at [EasyBookings Demo](https://itseasybookings.vercel.ap
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/EasyBookings.git
+   git clone https://github.com/rawdaymohamed/EasyBookings.git
    ```
 2. Navigate to the project directory:
    ```bash
