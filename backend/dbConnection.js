@@ -1,21 +1,14 @@
-import dotenv from 'dotenv'
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
-dotenv.config()
-
-const connectionURL = process.env.MONGODB_URI;
-
-// Ensure connectionURL is a string
-if (!connectionURL) {
-    throw new Error("CONNECTION_URL is not defined in the environment variables.");
+export async function connectDb(uri) {
+  if (!uri) throw new Error('Missing MongoDB URI (MONGODB_URI)');
+  mongoose.set('strictQuery', true);
+  await mongoose.connect(uri, { dbName: process.env.MONGODB_URI || 'mongo://localhost:27017/easybookings' });
+  console.log('Database connection successfully to MongoDB');
 }
 
-//db connection
-export const db = mongoose.connect((connectionURL))
-    .then(res => {
-        if (res) {
-            console.log(`Database connection succeffully to mongodb`)
-        }
-    }).catch(err => {
-        console.log(err)
-    });
+export async function disconnectDb() {
+  if (mongoose.connection.readyState !== 0) {
+    await mongoose.connection.close();
+  }
+}
