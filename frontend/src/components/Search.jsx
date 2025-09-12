@@ -45,7 +45,7 @@ const Search = () => {
   };
 
   return (
-    <div className="relative w-[95%] md:w-[90%] lg:w-[80%] xl:w-[70%]  mx-auto bg-white py-3 md:py-4 px-4 md:px-6 lg:border-2 border-[#ffd60a] flex flex-wrap items-center text-gray-600 rounded-lg shadow-md gap-3">
+    <div className="relative w-[95%] md:w-[90%] lg:w-[80%] xl:w-[70%]  mx-auto bg-white py-3 md:py-4 px-4 md:px-6 lg:border-2 border-[#ffd60a] flex flex-wrap items-center  text-gray-600 rounded-lg shadow-md gap-4">
       {/* Destination Input */}
       <div className="flex items-center gap-2 md:gap-3 bg-gray-100 px-4 py-2 rounded-lg w-full md:min-w-[200px] md:flex-1">
         <FaBed className="text-gray-600 size-6" />
@@ -145,10 +145,10 @@ const Search = () => {
       </div>
 
       {/* Search Button */}
-      <div className="flex justify-center md:justify-end w-full md:flex-1">
+      <div className="flex justify-center w-full md:flex-1">
         <button
           onClick={handleSearch}
-          className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-2xl w-full md:w-fit cursor-pointer"
+          className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-md w-full cursor-pointer"
         >
           Search
         </button>
