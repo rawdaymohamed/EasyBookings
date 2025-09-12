@@ -29,7 +29,7 @@ const Footer = () => {
       </div>
       {/* Copyright */}
       <p className="text-center text-sm text-gray-500 mt-8">
-        © {new Date().getFullYear()} Made with ❤️ by Rawda Yasser. All rights reserved.
+        Made with ❤️ by Rawda Yasser. © {new Date().getFullYear()} All rights reserved.
       </p>
     </footer>
   );
