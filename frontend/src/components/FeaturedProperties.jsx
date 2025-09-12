@@ -41,7 +41,7 @@ const properties = [
 
 const FeaturedProperties = () => {
   return (
-    <div className="w-[90%] lg:w-[80%] xl:w-[70%] mx-auto p-4">
+    <div className="w-[90%] lg:w-[80%] xl:w-[70%] mx-auto p-4 pb-15">
       <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-7">
         Discover Our Best
       </h2>
