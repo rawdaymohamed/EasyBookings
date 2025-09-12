@@ -9,7 +9,7 @@ import Footer from "../../components/Footer";
 
 const Home = () => {
   return (
-    <div className="h-[120vh] bg-[#edfbff] pt-[10vh]">
+    <div className="h-full bg-purple-50 pt-[10vh]">
       <Navbar />
       <Header />
       <div className="pt-[10vh] flex flex-col">

@@ -35,7 +35,7 @@ const Header = ({ type }) => {
           </div>
 
           {type !== "list" && (
-            <div className="flex flex-col gap-4 text-center">
+            <div className="flex flex-col gap-4 text-center text-purple-50">
               <h2 className="font-bold text-xl md:text-3xl lg:text-4xl leading-snug md:leading-[3rem]">
                 Welcome to EasyBookings, your gateway to exceptional
                 accommodations.
