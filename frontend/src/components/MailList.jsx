@@ -22,9 +22,9 @@ const MailList = () => {
             name="email"
             id="email"
             placeholder="Enter your email"
-            className="w-full sm:flex-grow px-4 py-3 rounded-lg text-gray-300 focus:outline-none ring-1 ring-purple-400 focus:ring-2 focus:ring-purple-500"
+            className="w-full sm:flex-grow px-4 py-3 rounded-lg text-gray-300 focus:outline-none ring-1 ring-purple-600 focus:ring-2 focus:ring-purple-700"
           />
-          <button className="w-full sm:w-auto bg-purple-400 hover:bg-purple-500 text-black font-semibold px-6 py-3 rounded-lg transition duration-300">
+          <button className="w-full sm:w-auto  bg-purple-600 hover:bg-purple-700 text-purple-50 font-semibold px-6 py-3 rounded-lg transition duration-300 hover:cursor-pointer">
             Subscribe
           </button>
         </div>
