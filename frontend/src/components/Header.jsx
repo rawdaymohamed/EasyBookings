@@ -1,6 +1,4 @@
-import React from "react";
 import { FaBed, FaCar, FaTaxi } from "react-icons/fa6";
-import { GrAttraction } from "react-icons/gr";
 import { IoAirplane } from "react-icons/io5";
 import Search from "./Search";
 
