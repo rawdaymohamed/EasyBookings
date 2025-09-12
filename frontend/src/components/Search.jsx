@@ -148,7 +148,7 @@ const Search = () => {
       <div className="flex justify-center w-full md:flex-1">
         <button
           onClick={handleSearch}
-          className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-md w-full cursor-pointer"
+          className="font-bold bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-md w-full cursor-pointer"
         >
           Search
         </button>
