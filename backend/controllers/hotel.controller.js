@@ -51,6 +51,7 @@ export const get = async (req, res, next) => {
 export const getAll = async (req, res, next) => {
   try {
     const hotels = await Hotel.find({});
+
     return res.status(201).json({ data: hotels });
   } catch (error) {
     return next(createError("Can't get hotels", 500));
