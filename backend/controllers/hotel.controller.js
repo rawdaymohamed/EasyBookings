@@ -55,9 +55,13 @@ export const getAll = async (req, res, next) => {
     return res.status(201).json({ data: hotels });
   } catch (error) {
     console.log("error:", error);
-    return res.status(500).json({ error: error });
-
-    return next(createError("Can't get hotels", 500));
+    // return res.status(500).json({ error: error });
+    return res.status(500).json({
+      message: error.message,
+      stack: error.stack,
+      raw: error,
+    });
+    // return next(createError("Can't get hotels", 500));
   }
 };
 export const getCountByCity = async (req, res, next) => {
