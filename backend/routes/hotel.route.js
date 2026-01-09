@@ -1,5 +1,13 @@
 import { Router } from "express";
-import { create, edit, getAll, remove, get, getCountByCity, getCountByType } from "../controllers/hotel.controller.js";
+import {
+  create,
+  edit,
+  getAll,
+  remove,
+  get,
+  getCountByCity,
+  getCountByType,
+} from "../controllers/hotel.controller.js";
 import { verifyAdmin } from "../utils/auth.js";
 const router = Router();
 router.get("/countByCity", getCountByCity);
