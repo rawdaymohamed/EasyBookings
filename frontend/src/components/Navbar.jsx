@@ -11,6 +11,7 @@ const Navbar = () => {
       }
     };
     window.addEventListener("scroll", handleScroll);
+    // cleanup: this prevents memory leaks when component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
